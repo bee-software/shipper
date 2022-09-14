@@ -4,6 +4,7 @@ set -o pipefail
 
 DRY_RUN="${DRY_RUN:-"0"}"
 
+source $(dirname $0)/src/config.sh
 source $(dirname $0)/src/remote.sh
 source $(dirname $0)/src/templating.sh
 source $(dirname $0)/src/docker_ready.sh

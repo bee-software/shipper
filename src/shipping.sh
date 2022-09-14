@@ -57,6 +57,10 @@ shipping_summary() {
 | Options
 |   ${options}
 +-----------------------------------------------------------------------+
+| Other options:
+|   Image namespace: $(config_image_namespace)
+|   Image registry URL: $(config_image_registry_url)
++-----------------------------------------------------------------------+
 | Audited
 |   $(is_shipping_label_audited ${shipping_label} && echo "true" || echo "false")
 +-----------------------------------------------------------------------+

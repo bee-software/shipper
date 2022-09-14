@@ -4,12 +4,12 @@ AUDIT_PATHNAME="audit"
 
 is_managed_image() {
     local image_name=$1
-    [[ ${image_name} =~ ^purpleship ]] # TODO allow customizing the image namespace
+    [[ ${image_name} =~ ^"$(config_image_namespace)" ]]
 }
 
 get_image_name() {
     local image_name=$1
-    prefix_less=${image_name#purpleship/} # TODO allow customizing the image namespace
+    prefix_less=${image_name#"$(config_image_namespace)/"}
     suffix_less=${prefix_less%:*}
     echo ${suffix_less}
 }
@@ -34,7 +34,7 @@ write_version_file_for() {
     local compose_file=${1}; shift
     local options=${*:-}
 
-    images=$(list_images ${compose_file} ${options} | strip_registry_url 'registry.purpleship.internal') # TODO allow customizing the registry URL
+    images=$(list_images ${compose_file} ${options} | strip_registry_url "$(config_image_registry_url)")
 
     for image in $images; do
         if is_managed_image ${image}; then

@@ -1,0 +1,5 @@
+version: '3'
+
+services:
+  httpd:
+    image: images.purpleship.example.com/purpleship/httpd:1.1
