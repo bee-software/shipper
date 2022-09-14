@@ -1,4 +1,4 @@
-name: Makefile CI
+name: "Build"
 
 on:
   push:
@@ -8,11 +8,12 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Build package
-      run: make all
+      - name: Build package
+        run: |
+          make clean
+          make all
