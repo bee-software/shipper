@@ -16,7 +16,9 @@ last_header_line_number() {
 
 dump_scripts() {
   grep '^source' ship.sh | sed 's#^source \$(dirname \$0)/##g' | while IFS= read -r script; do
+    echo ""
     cat "$script"
+    echo ""
   done
 }
 
