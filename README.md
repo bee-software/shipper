@@ -27,3 +27,8 @@ The path to the rc file can also be controlled via the `PURPLESHIP_RC` environme
 ## Configuration
 
 See `CONFIG.md` for all configuration options.
+
+## Contributors
+
+Special shoutout to François Perron, Jonathan Provost and Philippe Godin for contributing 
+to this project prior to it's open source release. Thank you for believing in simple software =)
