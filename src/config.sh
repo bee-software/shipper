@@ -1,14 +1,19 @@
 #!/bin/bash
 
-PURPLESHIP_RC="${PURPLESHIP_RC:-$HOME/.purpleshiprc}"
+GLOBAL_PURPLESHIP_RC="${PURPLESHIP_RC:-$HOME/.purpleshiprc}"
+LOCAL_PURPLESHIP_RC=".purpleshiprc"
 
 _config() {
   local key=$1
   local default=$2
 
   local value
-  if test -f "${PURPLESHIP_RC}"; then
-    value=$(grep "^${key}=" "${PURPLESHIP_RC}" | cut -d'=' -f2)
+  if test -f "${LOCAL_PURPLESHIP_RC}"; then
+    value=$(grep "^${key}=" "${LOCAL_PURPLESHIP_RC}" | cut -d'=' -f2)
+  fi
+
+  if [ "$value" == "" ] && test -f "${GLOBAL_PURPLESHIP_RC}"; then
+    value=$(grep "^${key}=" "${GLOBAL_PURPLESHIP_RC}" | cut -d'=' -f2)
   fi
 
   if [ "$value" == "" ]; then

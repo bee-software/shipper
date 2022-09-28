@@ -13,18 +13,21 @@ Some example shipping labels are provided in the `examples` directory.
 
     $ ship.sh examples/basic
 
-It is also possible configure purpleship via an rc file located at `$HOME/.purpleshiprc`.
+
+## Configuration
+
+Purpleship can be configured using a `.purpleshiprc` file. The file must be located in the working directory.
+Additionally, a global configuration file can be placed in `$HOME/.purpleshiprc`.
+The global configuration file will be used as a fallback.
 
     $ cat $HOME/.purpleshiprc
     image_namespace=demo
     image_registry_url=images.demo.example.com
 
-The path to the rc file can also be controlled via the `PURPLESHIP_RC` environment variable.
+The path to the global configuration file can also be controlled via the `PURPLESHIP_RC` environment variable.
 
     $ export PURPLESHIP_RC=/opt/demo/.purpleshiprc
     $ ship.sh examples/basic
-
-## Configuration
 
 See `CONFIG.md` for all configuration options.
 
