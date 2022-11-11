@@ -1,7 +1,7 @@
-# Purpleship configuration
+# Shipper configuration
 
-By default, purpleship reads a configuration file located at `$HOME/.purpleshiprc`.
-The path to this file can be controlled with the environment variable `PURPLESHIP_RC`.
+By default, shipper reads a configuration file located at `$HOME/.shipperrc`.
+The path to this file can be controlled with the environment variable `SHIPPER_RC`.
 
 ## Options
 ### image_namespace

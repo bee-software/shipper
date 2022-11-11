@@ -2,4 +2,4 @@ version: '3'
 
 services:
   httpd:
-    image: images.purpleship.example.com/purpleship/httpd:1.1
+    image: images.shipper.example.com/shipper/httpd:1.1

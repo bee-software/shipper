@@ -1,12 +1,12 @@
 .PHONY: all clean
 
-all: out/purpleship.sh
+all: out/shipper.sh
 
 clean:
 	rm -rf out/
 
-out/purpleship.sh: out
-	./build_bundle.sh out/purpleship.sh
+out/shipper.sh: out
+	./build_bundle.sh out/shipper.sh
 
 out:
 	mkdir out

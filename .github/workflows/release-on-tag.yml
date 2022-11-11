@@ -23,4 +23,4 @@ jobs:
           prerelease: false
           files: |
             LICENSE
-            out/purpleship.sh
+            out/shipper.sh
