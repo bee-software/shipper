@@ -40,7 +40,7 @@ containers_status() {
   local project_name="$(compose_project_name_from_label ${shipping_label})"
 
   remote_run_script_verbose ${destination} << __EOF
-    sudo /bin/bash -c "cd ${DOCKER_COMPOSE_PATH} && docker-compose \
+    sudo /bin/bash -c "cd ${DOCKER_COMPOSE_PATH} && docker compose \
         --project-name ${project_name} \
         --file ${compose_file} \
         ps ${*}"
@@ -56,7 +56,7 @@ bring_up_containers() {
 
   echo "Bringing up containers"
   remote_run_script ${destination} << __EOF
-    sudo /bin/bash -c "cd ${DOCKER_COMPOSE_PATH} && sudo docker-compose \
+    sudo /bin/bash -c "cd ${DOCKER_COMPOSE_PATH} && sudo docker compose \
         --project-name ${project_name} \
         --file ${compose_file} \
         up \

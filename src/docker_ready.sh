@@ -7,9 +7,9 @@ docker_ready() {
 }
 
 is_docker_installed() {
-    remote_run $1 "which docker"
+    remote_run $1 "docker version"
 }
 
 is_docker_compose_installed() {
-    remote_run $1 "which docker-compose"
+    remote_run $1 "docker compose version"
 }
